@@ -1,0 +1,22 @@
+{% if chat_list %}<pre>
+<ul>
+<ul>{% for chat in chat_list %}</ul>
+</ul>
+<ul>
+<ul>
+    <li><a id="" href="{% url 'chat_app:chat_room' chat.label %}"> {{ chat.name }}</a></li>
+</ul>
+</ul>
+<ul>{% endfor %}</ul>
+
+</pre>
+<h2><a href="{% url 'mainpage:chat' %}">Instant chat using websockets</a></h2>
+
+<text class="text-success"><a href="{% url 'chat_app:new_room' %}">Create a new one.</a></text>
+
+{% else %}
+
+No chat rooms are available.
+<text class="text-success"><a href="{% url 'chat_app:new_room' %}">Create a new one.</a></text>
+
+{% endif %}

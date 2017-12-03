@@ -1,0 +1,41 @@
+{% extends 'mainpage/base.html' %}
+{% load staticfiles %}
+{% block title %}Contact Us {% endblock %}
+
+
+{% block body %}
+<div class="abcd" id="xyz">
+<div class="abcd2">
+<h2><center>Contact US:</center></h2>
+<div class="button2" onClick="onClick3();"><div><img src="{% static 'mainpage/img/downarrow.png' %}" width="60px" height="20px"></div></div>
+<script src="{% static 'mainpage/js/all.js' %}"></script>
+  <div class="containerform">
+  <form id="contact" action="{% url 'mainpage:contact-add' %}" method="post">
+     {% csrf_token %}
+    <h3>Contact Form</h3>
+    <h4>Contact us </h4>
+
+      {% if message %}
+      <p><strong>{{ message }}</strong></p>
+      {% endif %}
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+    <p class="site">Designed by <a href="" target="_blank" title="IIT BHU gymkhana">Adit Agarwal</a></p>
+  </form>
+</div>
+</div>
+</div>
+{% endblock %}

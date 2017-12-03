@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Mail</title>
+<style>
+	fieldset{
+	}
+	body{
+		margin:0;
+		font-weight:bold;
+	}
+	table{
+		width:100%;
+	}
+	input[type='text']{
+		width:100%;
+	}
+	#but{
+		margin:auto;
+		text-align:center;
+	}
+	input[type='reset'],input[type='submit']{
+		width:30%;
+		height:5%;
+		text-align:center;
+		margin:50px;
+	}
+</style>
+</head>
+<body>
+<div class="form1">
+<form action="{% url 'emailsmtp:sendmail' %}" method="post">
+    {% csrf_token %}
+<fieldset>
+	<legend>Headers:</legend>
+<table>
+
+<tr>	
+<td>To:(specify username of receiver for local mail server)  </td><td>   <input type="text" name="To" width="100"><br></td>
+</tr>
+<tr>
+	<td width='30%'><label for='sender' style="margin-left:12%;">Your Mail ID :</label></td>
+	<td>
+        {% if error_message %}
+            <text class="text-danger">{{ error_message }}</text>
+            <a href="{% url 'mainpage:register' %}">Register here</a>
+        {% endif %}
+        <input type='text' name='sender' id="sender"/></td>
+</tr>
+<tr>
+	<td><label for='password' style="margin-left:12%;">Password :</label></td>
+    <td><input type='password' name='password' id="password"/></td>
+</tr>
+</table>
+
+</fieldset>
+<fieldset>
+<legend>Data:</legend>
+Message:<textarea name="message" rows="10" cols="40">
+</textarea><br>
+</fieldset>
+<fieldset>
+<table>
+<tr>
+<td width=30%>Server:</td><td width=70%>   <input type="text" name="server"><br></td>
+</tr>
+<tr>
+<td>Port:  </td><td>   <input type="text" name="port" width="100"><br></td>
+</tr>
+</table>
+</fieldset>
+
+<div id='but'><input type="reset"><input type="submit" name="submit" value="submit"></div>
+</form>
+</div>
+</body>
+</html>

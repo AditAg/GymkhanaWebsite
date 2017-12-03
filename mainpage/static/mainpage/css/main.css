@@ -1,0 +1,563 @@
+/*!
+ * Start Bootstrap - Stylish Portfolio (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+/* Global Styles */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#navigation {
+    -webkit-transition: all 0.8s ease 0s;
+       -moz-transition: all 0.8s ease 0s;
+        -ms-transition: all 0.8s ease 0s;
+         -o-transition: all 0.8s ease 0s;
+            transition: all 0.8s ease 0s;
+
+    background-color: rgba(0,0,0,.4);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 5px 0;
+}
+
+#navigation.animated-header {
+    padding: 20px 0;
+}
+
+h1.navbar-brand {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}
+
+/* Custom Button Styles */
+
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: rgb(255,255,255);
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+    color: #333;
+    background-color: rgba(255,255,255,0.8);
+}
+
+/* Custom Horizontal Rule */
+
+hr.small {
+    max-width: 100px;
+}
+
+
+
+
+
+/* Header */
+
+.header {
+    display: table;
+    position:relative;
+	    width: 100%;
+    height: 100%;
+	background:url(../img/slider/1.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+#cf{
+	position:absolute;
+	z-index:0;
+	height:100%;
+	width:100%;
+}
+#cf img {
+	height:100%;
+	width:100%;
+	position:absolute;
+	z-index:0;
+	margin:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes cf3FadeInOut {
+0%{
+  opacity:1;
+}
+35% {
+opacity:1;
+}
+65% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+
+#cf img.top1 {
+animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 4s;
+animation-direction: alternate;
+}
+
+
+/* About */
+
+.about {
+    
+	position:relative;
+	width:100%;
+	height:100%;
+}
+.about h2{
+	padding-left:50px;
+}
+
+/* Councils */
+
+.councils {
+    padding: 50px 0;
+}
+
+.councils-item {
+    margin-bottom: 30px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+	z-index:1;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.calendar {
+    display: table;
+    width: 100%;
+	float:right;
+    height: 700px;
+    overflow:scroll;
+    color: #fff;
+    background: url(../img/callout.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+	
+}
+
+.eventitem{
+	width:100%;
+	background-color:black;
+	text:white;
+	height:20%;
+	overflow:hidden;
+}
+.eventitem:hover{
+	box-shadow:0 0 30px 10px #01FFD4;
+	z-index:3;
+}
+.eventdate{
+	
+	width:10%;
+	height:100%;
+	float:left;
+	border-radius:30px;
+	text-align:center;
+	border-style:groove;
+}
+.eventdetails{
+    width:90%;
+    height:100%;
+    float:right;
+}
+.socialmediabuttons ul{
+	position:fixed;
+	z-index:2;
+	
+	overflow:auto;
+	margin-top:350px;
+}
+.socialmediabuttons ul li{
+	list-style-type:none;
+	
+}
+.socialmediabuttons ul li a{
+	margin-top:3px;
+	padding-top:15%;
+}
+.socialmediabuttons ul li a i{
+	
+	width:40px;
+	height:40px;
+	border-radius:20px;
+	text-align:center;
+	font-size:20px;
+	margin-left:0px;
+	padding-top:10px;
+	
+	
+	transition: all 0.2s ease-in-out;
+}
+	
+.mediaicon .fa-facebook {
+	background:#3b5998
+} 
+.mediaicon .fa-linkedin {
+	background:#007bb6
+}
+.mediaicon .fa-twitter {
+	background:#00aced
+}
+.mediaicon .fa-google-plus {
+	background:#d34836
+}
+.socialmediabuttons ul li a i:hover{opacity:0.7;
+border-radius:30px;
+
+}
+
+
+.latestnews {
+    padding: 50px 0;
+}
+
+.news-item {
+    margin-bottom: 30px;
+}
+.news-item img{
+	width:20%;
+	height:100%;
+	float:left;
+}
+.news-item .text{
+	float:right;
+}
+
+.img-portfolio {
+    margin: 0 auto;
+}
+
+.img-portfolio:hover {
+    opacity: 0.8;
+}
+
+/* Call to Action */
+
+.call-to-action {
+    padding: 50px 0;
+}
+
+.call-to-action .btn {
+    margin: 10px;
+}
+
+/* Map */
+
+.map {
+    height:500px;
+	width:100%;
+	float:left;
+	position:relative;
+	padding:2px;
+	border-style:groove;
+	border-width:5px;
+}
+
+
+
+
+/* Footer */
+
+footer {
+    padding: 100px 0;
+}
+
+#to-top {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+.buttonclick {
+	position:relative;
+	border-radius: 4px;
+  border: none;
+  text-align: center;
+  font-size: 28px;
+  width: 20%;
+  height:80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left:40%;
+}
+.buttonclick div{
+	opacity:0;
+	width:100%;
+	height:80%;
+	padding-top:0px;
+	transition:opacity 1s linear,padding-top 0.5s linear;
+	
+}
+.buttonclick:hover div{
+	opacity:1;
+	padding-top:20px;
+}
+
+.abcd{
+	position:relative;
+	width:0%;
+	height:0%;
+	visibility:hidden;
+	transition:margin-top 0.5s linear;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 30px;
+    color: #777;
+    background: #4CAF50;
+}
+.abcd2{
+	  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.bodybg{
+	visibility:visible;
+	margin-bottom:0px;
+	transition:margin-bottom 0.5s linear,visibility 0.5s linear;
+}
+.button2 {
+	position:absolute;
+	z-index:2;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  font-size: 28px;
+  width: 20%;
+  height:80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top:0px;
+  margin-left:40%;
+}
+.button2 div{
+	opacity:0;
+	width:100%;
+	height:80%;
+	padding-top:0px;
+	transition:opacity 1s linear,padding-top 0.5s linear;
+	
+}
+.button2:hover div{
+	opacity:1;
+	padding-top:20px;
+}
+
+
+
+
+
+.containerform {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.site {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+
+

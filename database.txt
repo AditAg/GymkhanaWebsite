@@ -1,0 +1,38 @@
+'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+
+ 'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '',
+        'USER': 'admin',
+        'PASSWORD': 'pass1234',
+        'HOST': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+
+
+
+
+
+
+
+try:
+    import pymysql
+    pymysql.install_as_MySQLdb()
+except ImportError:
+    pass
+DATABASES = {
+
+
+ 'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gymkhanawebsite',
+        'USER': 'admin',
+        'PASSWORD': 'pass1234',
+        'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+}
+

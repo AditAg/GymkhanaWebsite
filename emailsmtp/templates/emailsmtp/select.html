@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail</title>
+</head>
+<body>
+    <form>
+        <a href="{% url 'emailsmtp:emailform' %}">Mail to User</a>
+        <a href="{% url 'emailsmtp:emailform2' %}">Mail to Admins</a>
+</body>
+</html>

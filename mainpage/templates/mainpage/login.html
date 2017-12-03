@@ -1,0 +1,47 @@
+{% extends 'mainpage/base.html' %}
+{% block title %} Lgin {% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-7">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3>Login</h3>
+                        <h3>{{ error }}</h3>
+                         <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+
+                               {% if error_message %} <div class="col-sm-offset-2 col-sm-10">
+                                <span class="text-danger small">{{ error_message }}</span>
+
+                            </div>{% endif %}
+                            <div class="control-label col-sm-2">Username</div>
+                            <input type="text" name="username"/>
+                            </div>
+                            <div class="form-group">
+                                {% if error_message %}<div class="col-sm-offset-2 col-sm-10">
+                                <span class="text-danger small">{{ error_message }}</span>
+
+                            </div>{% endif %}
+                            <div class="control-label col-sm-2">Password</div>
+                            <input type="password" name="password"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
+                        <div class="col-sm-offset-2 col-sm-5">
+                          <text class="text-success"><a href="{% url 'mainpage:register' %}">Create a new one.</a></text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    {% load staticfiles %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href='https://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+
+
+    <!-- Custom Fonts -->
+
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+
+	<link rel='stylesheet' href="{% static 'councils/css/reset.css' %}" type="text/css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'councils/css/style.css' %}" type="text/css"> <!-- Resource style -->
+	<script src="{% static 'councils/js/modernizr.js' %}"></script> <!-- Modernizr -->
+	<link rel="stylesheet" href="{% static 'councils/css/font-awesome.min.css' %}" type="text/css">
+  	<link rel="stylesheet" href="{% static 'councils/css/bootstrap.css' %}" type="text/css">
+
+	<title>{{ council.council_name }}</title>
+</head>
+<body>
+<nav class="cd-vertical-nav">
+	<ul>
+		<li><a href="#section1" class="active"><span class="label">About</span></a></li>
+		<li><a href="#section2"><span class="label">Clubs</span></a></li>
+		<li><a href="#section3"><span class="label">Our Achievements</span></a></li>
+		<li><a href="#section4"><span class="label">Our Team</span></a></li>
+	</ul>
+</nav><!-- .cd-vertical-nav -->
+
+<button class="cd-nav-trigger cd-image-replace">Open navigation<span aria-hidden="true"></span></button>
+
+<section id="section1" class="cd-section">
+	<div class="content-wrapper" >
+			<div class="container">
+				<div class="row">
+					<div class="header1" background-image="{% static 'councils/img/iit.jpg' %}" style="z-index:100;">
+                        {{ council.council_id }}
+						{% if council_id == '1' %}
+                            {% include 'councils/sntc_about.html' %}
+                        {% elif council_id == '2' %}
+                            {% include 'councils/fmc_about.html' %}
+                        {% elif council_id == '3' %}
+                            {% include 'councils/cult_about.html' %}
+                        {% else %}
+                            {% include 'councils/sports_about.html' &}
+                        {% endif %}
+					</div>
+				</div>
+			</div>
+		<a href="#section2" class="cd-scroll-down cd-image-replace">scroll down</a>
+	</div>
+</section><!-- cd-section -->
+
+<section id="section2" class="cd-section">
+	<div class="content-wrapper">
+		<div class="container">
+		<div class="row">
+		<div class="sec-title text-center">
+							<h2 class="wow animated bounceInLeft">Our Clubs</h2>
+							
+						</div>
+                        {% for club in club_list %}
+
+						<div class="col-md-3 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+							<div class="service-item">
+								<a href="/councils/{{ council.id }}/{{ club.id }}/">
+                                    <div class="service-icon">
+									<span class="fa-stack fa-3x">
+                                        <i class="fa fa-stack-1x text-primary" ><img src="C:\Users\dr richa agarwal\Desktop\gymkhanawebsite\councils\static\councils\img\{{ club.club_title }}.ico" width="30px" height="40px" ></i>
+                                    </span>
+								</div>
+								<h3>{{ club.club_name }}</h3>
+								</a>
+								
+							</div>
+						</div>
+
+					    {% endfor %}
+
+		</div>
+		</div>
+		</div>
+</section><!-- cd-section -->
+
+<section id="section3" class="cd-section">
+	<div class="content-wrapper">
+		<header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Achievements</h1>
+												<hr class="small">
+                        <span class="subheading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading"><!-- achievement title here --></h2>
+                    {% for achievement in achievements %}
+                        <img src="{{ achievement.achievement_image }}" width="50" height="50">
+                        <h4>{{ achievement.achievement_title }}</h4>
+                        <h5>{{ achievement.achievement_detail }}</h5>
+                    {% endfor %}
+
+                                                <!--achievements here -->
+										</div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+
+
+    <!-- jQuery -->
+    <script src="{% static 'councils/vendor/jquery/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'councils/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{% static 'councils/js/jqBootstrapValidation.js' %}"></script>
+    <script src="{% static 'councils/js/contact_me.js' %}"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static 'councils/js/clean-blog.min.js' %}"></script>
+	</div>
+</section><!-- cd-section -->
+
+<section id="section4" class="cd-section">
+	<div class="content-wrapper">
+	<section id="team">
+		<div class="container">
+		<div class="row">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+          <h2>The Team</h2>
+          
+        </div>
+      </div>
+      <div class="team-members">
+        <div class="row">
+          <div class="col-sm-3 col-lg-4" >
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-image">
+                <img class="img-circle" src="{% static 'councils/img/team/1.jpg' %}" alt="">
+              </div>
+              <div class="member-info">
+                <h3>XYZ</h3>
+                <h4>General Secretary</h4>
+
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+                    <div class="col-sm-3 col-lg-4">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-image">
+                <img class="img-circle" src="{% static 'councils/img/team/2.jpg' %}" alt="">
+              </div>
+              <div class="member-info">
+                <h3>XYZ</h3>
+                <h4>Joint-General Secretary</h4>
+
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-4">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-image">
+                <img class="img-circle" src="{% static 'councils/img/team/3.jpg' %}" alt="">
+              </div>
+              <div class="member-info">
+                <h3>XYZ</h3>
+                <h4>Joint-General Secretary</h4>
+
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>            
+    </div>
+  </section>
+		</div>
+</section><!-- cd-section -->
+	
+<script src="{% static 'councils/js/jquery-2.1.4.js' %}"></script>
+<script src="{% static 'councils/js/main.js' %}"></script> <!-- Resource jQuery -->
+</body>
+</html>

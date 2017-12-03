@@ -1,0 +1,34 @@
+{% extends 'mainpage/base.html' %}
+{% block title %} Register {% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-7">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3>Create a new event</h3>
+                        {% if error_message %}
+                            <p><strong>{{ error_message }}</strong></p>
+                        {% endif %}
+                        <form class="form-horizontal" role="form" action="{% url 'mainpage:eventadd' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div style='width:20%'>Event Title: </div><input type="text" name="event_title"/><br/>
+                            <div style='width:20%'>Event Date:</div><input type="date" name="event_date"/><br/>
+                            <div style='width:20%'>Event Details:</div><textarea height="4" width="30"  name="event_details"></textarea><br/>
+                            <div style='width:20%'>Event Url:</div><input name="event_url"/><br/>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

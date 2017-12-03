@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IIT BHU Gymkhana</title>
+    {% load staticfiles %}
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'mainpage/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'mainpage/css/main.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'mainpage/css/animate.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Custom Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type="text/css">
+
+		<!-- Fontawesome Icon font -->
+    <link href="{% static 'mainpage/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="{% static 'mainpage/img/image.ico' %}">
+
+</head>
+
+<body class="bodybg" id="bodychange">
+
+<div class="socialmediabuttons">
+<ul>
+<li ><a href="http://facebook.com/" class="mediaicon"><i class="fa fa-facebook"></i></a></li>
+<li ><a href="http://linkedin.com/" class="mediaicon"><i class="fa fa-linkedin"></i></a></li>
+<li ><a href="http://twitter.com/" class="mediaicon"><i class="fa fa-twitter"></i></a></li>
+<li ><a href="http://plus.google.com/" class="mediaicon"><i class="fa fa-google-plus"></i> </a></li>
+</ul>
+</div>
+
+    <!-- Navigation -->
+    <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+                    </button>
+				<!-- /responsive nav button -->
+
+					<!-- logo -->
+					<a href="http://www.iitbhu.ac.in"><img src="{% static 'mainpage/img/logo1.jpg' %}" width="50px" height="50px" style="opacity:0.5;"></a>
+
+
+                    <h1 class="navbar-brand">
+						<a href="#body">IIT-BHU</a>
+					</h1>
+					<!-- /logo -->
+                </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav" style="font-family:'Satisfy',cursive">
+                        {% if user.is_authenticated %}
+                        <li><a href="">Hi {{ user.username }}</a></li>
+                        {% endif %}
+                        <li><a href="#top">Home</a></li>
+                        <li><a href="#councils">Councils</a></li>
+                        <li><a href="#latestnews">Latest News</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="#calendar">My_Events</a></li>
+                        {% else %}
+                        <li><a href="#calendar">Calendar</a></li>
+                        {% endif %}
+                        <li>
+                            {% if user.is_authenticated %}
+                            <a href="/chatpage/">Chat Page</a>
+                            <a href="/email/">Mail</a>
+                            <a href="{% url 'mainpage:logout' %}">Logout</a>
+                            {% else %}
+
+                            <a href="{% url 'mainpage:register' %}">Register/LogIn</a>
+                            {% endif %}
+                        </li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+				<!-- /main nav -->
+
+            </div>
+        </header>
+
+		<header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>IIT BHU Gymkhana</h1>
+            <h3>IIT BHU,Varanasi</h3>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg">Get to Know Us</a>
+        </div>
+
+
+    </header>
+
+    <!-- About -->
+    <div id="about" class="about">
+        <div class="containerforabout">
+
+                    <h2>IIT BHU Gymkhana has a lot in store for you:</h2>
+                    <div id="cf">
+						<img class="bottom" src="{% static 'mainpage/img/slider/2.jpg' %}" />
+  <img class="top1" src="{% static 'mainpage/img/slider/3.jpg' %}" />
+
+					</div>
+                </div>
+           <!-- /.container -->
+    </div>
+
+    <!-- Councils -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="councils" class="councils bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>We are formed by:</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6"><a href="/councils/2/">
+                            <div class="councils-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x" ></i>
+                                <i class="fa fa-stack-1x text-primary" ><img src="{% static 'mainpage/img/fmclogo.ico' %}" width="60px" height="60px" ></i>
+                            </span>
+                                <h4>
+                                    <strong>Film And Media Council(FMC)</strong>
+                                </h4>
+                                <p>For My College
+								                   </p>
+                                <div class="dropdown">
+   <a href="#" class="btn btn-light">Know Us a Bit Deeper</a>
+                   <div class="dropdown-content">
+                     <a href="/councils/2/8/">Photography Club</a>
+                     <a href="/councils/2/9/">Cine And Animation Club</a>
+                      <a href="/councils/2/21/">Design Club</a>
+					  <a href="/councils/2/10/">Media Club</a>
+					  <a href="/councils/2/22/">Social And Outreach Club</a>
+                         </div>
+                         </div>
+                            </div></a>
+                        </div>
+                        <div class="col-md-3 col-sm-6" >
+                            <a href="/councils/1/">
+                            <div class="councils-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x text-primary"><img src="{% static 'mainpage/img/sntclogo.ico' %}" width="60px" height="60px"></i>
+                            </span>
+                                <h4>
+                                    <strong>Science And Technology Council</strong>
+                                </h4>
+                                <p>Where Technology meets Innovation</p>
+                                <div class="dropdown">
+   <a href="#" class="btn btn-light">Know Us a Bit Deeper</a>
+                   <div class="dropdown-content">
+                     <a href="/councils/1/2/" >Robotics Club</a>
+<a href="/councils/1/1/">Aeromodelling Club</a>
+<a href="/councils/1/7/">SAE Club</a>
+<a href="/councils/1/5/">Astronomy Club</a>
+<a href="/councils/1/3/">COPS</a>
+<a href="/councils/1/4/">Green Club</a>
+                       <a href="/councils/1/6/">Club of Economics and Finance</a>
+                         </div>
+                         </div>
+                            </div></a>
+                        </div>
+                        <div class="col-md-3 col-sm-6"><a href="/councils/3/">
+                            <div class="councils-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x text-primary"><img src="{% static 'mainpage/img/cult.ico' %}" width="60px" height="60px"></i>
+                            </span>
+                                <h4>
+                                    <strong>The Cultural Council</strong>
+                                </h4>
+                                <p>"Vision is the art of seeing what is invisible to others"</p>
+                                <div class="dropdown">
+   <a href="#" class="btn btn-light">Know Us a Bit Deeper</a>
+                   <div class="dropdown-content">
+                     <a href="/councils/3/11/">Masquerades-Theatre Club</a>
+<a href="/councils/3/17/">DFZ-Dance Club</a>
+<a href="/councils/3/18/">Indian Music Club</a>
+<a href="/councils/3/19/">Western Music Club</a>
+<a href="/councils/3/20/">Lit Club</a>
+<a href="/councils/3/12/">Fine Arts Club</a>
+                         </div>
+                         </div>
+                            </div></a>
+                        </div>
+                        <div class="col-md-3 col-sm-6"><a href="/councils/4/">
+                            <div class="counclis-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-1x text-primary"><img src="{% static 'mainpage/img/sports.ico' %}" width="60px" height="60px"></i>
+                            </span>
+                                <h4>
+                                    <strong>Sports Council</strong>
+                                </h4>
+                                <p>Play, and stay fit</p>
+                                <div class="dropdown">
+   <a href="#" class="btn btn-light">Know Us a Bit Deeper</a>
+                   <div class="dropdown-content">
+                     <a href="/councils/4/16/">Cricket</a>
+<a href="/councils/4/15/">Football</a>
+<a href="/councils/4/13/">Badminton</a>
+<a href="/councils/4/14/">Hockey</a>
+                         </div>
+                         </div>
+                            </div></a>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Latest News -->
+    <section id="latestnews" class="latestnews">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>LATEST NEWS:</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <!-- use a for loop from the database to convert the 9 news-items given below to a single loop -->
+                        {% for news in all_news %}
+                        <div class="col-md-4">
+                            <div class="news-item">
+                                <a href="#">
+
+									<img class="img-responsive" src="{{ news.news_image }}" width="50%" height="50%">
+
+                                    <div class="text"><h3>{{ news.news_title }}-{{ news.news_text }}</h3></div>
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                                       <div class="col-md-4">
+                            <div class="news-item">
+                                <a href="#">
+                                    <img class="img-responsive" src="{% static 'mainpage/img/portfolio-1.jpg' %}"><div class="text"><h3>IIT BHU Hello this is the first news</h3></div>
+                                </a>
+                            </div>
+                        </div>
+						                        <div class="col-md-4">
+                            <div class="news-item">
+                                <a href="#">
+                                    <img class="img-responsive" src="{% static 'mainpage/img/portfolio-1.jpg' %}"><div class="text"><h3>IIT BHU Hello this is the first news</h3></div>
+                                </a>
+                            </div>
+                        </div>
+						                        <div class="col-md-4">
+                            <div class="news-item">
+                                <a href="#">
+                                    <img class="img-responsive" src="{% static 'mainpage/img/portfolio-1.jpg' %}"><div class="text"><h3>IIT BHU Hello this is the first news</h3></div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <a href="#" class="btn btn-dark">View More Items</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <aside class="calendar" id="calendar">
+	<div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h1>Calendar</h1>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'mainpage:eventregister' %}">Create an event for yourself.</a>
+                    {% endif %}
+			      <hr class="small">
+                    <div class="row">
+                       {% for event in all_events %}
+                            {% if event in urgent %}
+                                    <div class="col-md-12">
+					    <div class="eventitem"><h4 class="eventdate">{{ event.event_date }}</h4>
+
+						<div class="eventdetails"><a href="{{ event.event_url }}"><h3><center>{{ event.event_title }}</center><br>
+
+                        {{ event.event_detail }}</h3></a> <div class="text-danger small"><h2>URGENT</h2></div>
+                            <a href="{{ event.event_url }}">{{ event.event_title }}</a>
+                                <hr>
+                            </div>
+
+						</div>
+					   </div>
+                            {% else %}
+
+                       <div class="col-md-12">
+					    <div class="eventitem"><h4 class="eventdate">{{ event.event_date }}</h4>
+						<div class="eventdetails"><a href="{{ event.event_url }}"><h3><center>{{ event.event_title }}</center><br>
+
+                        {{ event.event_detail }}</h3></a>
+                            <a href="{{ event.event_url }}">{{ event.event_title }}</a>
+                                <hr>
+                            </div>
+
+						</div>
+					   </div>
+                        {% endif %}
+                        {% endfor %}
+					   <div class="col-md-12">
+					    <div class="eventitem"><h4 class="eventdate">30<sup>th</sup><br>Sept.</h4>
+						<a href="#"><h3>FMC Weekend </h3></a>
+						</div>
+					   </div>
+					   </div>
+					   </div>
+
+					   </div>
+					   </div>
+
+
+
+    </aside>
+
+
+
+
+
+    <div id="contact" class="map"></div>
+	            <script src="{% static 'mainpage/js/map.js' %}">
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+    <!-- Footer -->
+    <footer >
+        <div class="container" id="contactus2">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Contact Us</strong>
+                    </h4>
+                    <p>IIT BHU
+                        <br>Varanasi<br>
+						Adit Agarwal<br>
+						Ketan Kanishka<br>
+						Anand Vir Singh<br>
+						Devani Mayur</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> </li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="{% url 'emailsmtp:emailform2' %}">Mail Us</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="http://facebook.com/"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com/"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://linkedin.com/"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; iit bhu</p>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
+
+
+    <script src="{% static 'mainpage/js/jquery.js' %}"></script>
+
+
+    <script src="{% static 'mainpage/js/bootstrap.min.js' %}"></script>
+
+
+    <script>
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    // Disable Google Maps scrolling
+    // See http://stackoverflow.com/a/25904582/1607849
+    // Disable scroll zooming and bind back the click event
+    var onMapMouseleaveHandler = function(event) {
+        var that = $(this);
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+    </script>
+    <h4><center>To contact us: Hover and click on the button</center></h4>
+	<div class="buttonclick" onClick="onClick2();"><div><img src="{% static 'mainpage/img/downarrow.png' %}" width="60px" height="20px"></div></div>
+<script src="{% static 'mainpage/js/all.js' %}"></script>
+<div class="abcd" id="xyz" >
+<div class="abcd2">
+<h2><center>Contact US:</center></h2>
+<div class="button2" onClick="onClick3();"><div><img src="{% static 'mainpage/img/downarrow.png' %}" width="60px" height="20px"></div></div>
+<script src="{% static 'mainpage/js/all.js' %}"></script>
+  <div class="containerform">
+  <form id="contact" action="{% url 'mainpage:contact-add' %}" method="post">
+     {% csrf_token %}
+    <h3>Contact Form</h3>
+    <h4>Contact us </h4>
+
+
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" name="contact_name" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" name="contact_email" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Phone Number" type="tel" tabindex="3" name="contact_phone" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your message here...." tabindex="5" name="contact_message" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+    <p class="site">Designed by <a href="" target="_blank" title="IIT BHU gymkhana">Adit Agarwal</a></p>
+  </form>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>
