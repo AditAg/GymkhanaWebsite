@@ -1,0 +1,42 @@
+Follow the following steps with a proxy-free connection:
+
+(I) Make an account on IBM Bluemix through "https://developer.ibm.com/sso/bmregistration?ca=dw-_-cognitive-_-TPC2017-_-IndiaWS2". If this doesn't work try through "https://console.bluemix.net/" . 
+Fill the details, and make sure you have filled the organization name and space name (these should be unique, like your username).
+
+(II) Set-up Bluemix CLI on your system
+
+1) download the bluemix cli tar. (https://clis.ng.bluemix.net/ui/home.html)
+2) For Ubuntu, unzip, and run the install command (./install_bluemix_cli) and follow step 3.
+   For Windows, just install and skip step 3.
+3) Add the bin folder to PATH variable to use 'bx' command globally. Use the following commands on terminal
+   a) gedit ~/.profile
+   b) Find the line 
+	PATH="$HOME/bin:$PATH"
+   c) Replace this line with 
+	PATH="$HOME/bin:$PATH:<LOACTION_OF_BIN_FOLDER>"
+		e.g. For me, it looks like 
+			PATH="$HOME/bin:$PATH:/home/mayank/Bluemix_CLI/bin"
+   d) Save the changes.
+4) Add the api end point, I have used the UK organization loacation so my command looks like (you can use the exact same command)
+	bluemix api https://api.eu-gb.bluemix.net
+5) Use the command "bx login" to login on your system and complete the formalities by selecting everything with default values
+6) Use the following command to input your target and space name on your terminal. These are also visible on the top-right corner of your bluemix console homepage after login.
+	bx target -o <ORGANIZATION_NAME> -s <SPACE_NAME>
+
+(III) Upload/push your project code
+
+1) 'cd' into your app root directory, for mobile app developers, you need to cd into your server's root directory as that will be the one getting hosted on the cloud.
+2) Run the command 'bx cf push app-name', app-name can be anything, just make sure it is unique and url friendly. ( like codefest-testapp ) You will get an error if your app-name is already taken.
+3)If everything run's smooth, you shall be provided with a url using which you can acess the app. This URL is available on your Bluemix console homepage.
+
+my app link: 'http://codefest-testapp.eu-gb.mybluemix.net/'
+
+
+To update the code, make changes to your code and repead the process under step (III) with the same app-name.
+
+
+NOTE: Those who are making Django app need to install Django buildpacks on the Bluemix server manually, as Django is not a part of the default buildpacks available on Bluemix.
+
+
+
+

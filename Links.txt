@@ -1,2 +1,2 @@
-BlueMix: gymkhanawebsite.au-syd.mybluemix.net
+BlueMix: gymkhanawebsite.eu-gb.mybluemix.net
 Github Link : https://github.com/AditAg/GymkhanaWebsite

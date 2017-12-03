@@ -1,0 +1,6 @@
+http://www.marinamele.com/2013/12/how-to-set-django-app-on-heroku-part-i.html
+https://developer.ibm.com/answers/questions/190465/unable-to-deploy-django-python-app-to-bluemix.html
+static root django error with bluemix
+https://stackoverflow.com/questions/41904685/oserror-errno-2-no-such-file-or-directory-tmp-makecalls-static
+https://developer.ibm.com/answers/questions/8208/instance-not-starting-after-app-deployment-not-much-info-in-logs.html
+https://www.ibm.com/blogs/bluemix/2015/06/resolving-application-push-errors-part-3/
